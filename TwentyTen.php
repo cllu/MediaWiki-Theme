@@ -162,10 +162,7 @@ class TwentyTenTemplate extends QuickTemplate {
 
 	<div id="footer" role="contentinfo" <?php $this->html('userlangattributes') ?>>
 		<div id="colophon">
-				<div id="site-info">
-				<a href="<?php echo htmlspecialchars($this->data['nav_urls']['mainpage']['href'])?>" rel="home"><?php echo $this->text('sitename') ?></a>
-			</div><!-- #site-info -->
-			<div id="site-generator">Powered by
+		    <div id="site-generator">Powered by
 				<a href="http://mediawiki.org/" rel="generator">MediaWiki</a>
 				and the <a href="http://wordpress.org/extend/themes/twentyten" rel="generator">TwentyTen theme</a>.
 			</div>
