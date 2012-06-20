@@ -1,6 +1,6 @@
 .printfooter { display:none }
 a { color:#007296 }
-.editsection { font-size:smaller; color:#777 }
+.editsection { font-size:14px; color:#777 }
 .editsection a { color:#777; text-decoration:none }
 .editsection a:hover { color:#007296 }
 
