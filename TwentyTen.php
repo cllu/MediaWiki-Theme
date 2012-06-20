@@ -162,77 +162,7 @@ class TwentyTenTemplate extends QuickTemplate {
 
 	<div id="footer" role="contentinfo" <?php $this->html('userlangattributes') ?>>
 		<div id="colophon">
-		
-			<div id="footer-widget-area" role="complementary">
-			
-				<div id="first" class="widget-area">
-					<ul class="xoxo">
-			<?php
-				foreach($this->data['content_actions'] as $key => $tab) {
-					echo '
-				 <li id="' . Sanitizer::escapeId( "ca-$key" ) . '"';
-					if( $tab['class'] ) {
-						echo ' class="'.htmlspecialchars($tab['class']).'"';
-					}
-					echo '><a href="'.htmlspecialchars($tab['href']).'"';
-					# We don't want to give the watch tab an accesskey if the
-					# page is being edited, because that conflicts with the
-					# accesskey on the watch checkbox.  We also don't want to
-					# give the edit tab an accesskey, because that's fairly su-
-					# perfluous and conflicts with an accesskey (Ctrl-E) often
-					# used for editing in Safari.
-				 	if( in_array( $action, array( 'edit', 'submit' ) )
-				 	&& in_array( $key, array( 'edit', 'watch', 'unwatch' ))) {
-				 		echo $skin->tooltip( "ca-$key" );
-				 	} else {
-				 		echo $skin->tooltipAndAccesskeyAttribs( "ca-$key" );
-				 	}
-				 	echo '>'.htmlspecialchars($tab['text']).'</a></li>';
-				} ?>
-					</ul>
-				</div><!-- #first .widget-area -->
-			
-				<div id="second" class="widget-area">
-					<ul class="xoxo">
-					<?php $this->toolbox() ?>
-					</ul>
-				</div><!-- #second .widget-area -->
-				
-				<div id="third" class="widget-area">
-					<ul class="xoxo" <?php $this->html('userlangattributes') ?>>
-					<?php foreach($this->data['personal_urls'] as $key => $item) { ?>
-						<li id="<?php echo Sanitizer::escapeId( "pt-$key" ) ?>"<?php
-						if ($item['active']) { ?> class="active"<?php } ?>><a href="<?php
-						echo htmlspecialchars($item['href']) ?>"<?php echo $skin->tooltipAndAccesskeyAttribs('pt-'.$key) ?><?php
-						if(!empty($item['class'])) { ?> class="<?php
-						echo htmlspecialchars($item['class']) ?>"<?php } ?>><?php
-						echo htmlspecialchars($item['text']) ?></a></li>
-					<?php } ?>
-					</ul>
-				</div><!-- #third .widget-area -->
-
-				<div id="fourth" class="widget-area">
-					<ul class="xoxo">
-					<?php //if($this->data['copyrightico']) echo '<li>'.$this->html('copyrightico').'</li>';
-					// Generate additional footer links
-
-                    // delete tagline, credit, copyright, privacy, about, disclaimer,
-					$footerlinks = array('lastmod', 'viewcount', 'numberofwatchingusers');
-					$validFooterLinks = array();
-					foreach( $footerlinks as $aLink ) {
-						if( isset( $this->data[$aLink] ) && $this->data[$aLink] ) $validFooterLinks[] = $aLink;
-					}
-					foreach( $validFooterLinks as $aLink ):
-						if( isset( $this->data[$aLink] ) && $this->data[$aLink] ): ?>
-					<li id="<?php echo $aLink ?>"><?php $this->html($aLink) ?></li>
-						<?php endif ?>
-					<?php endforeach ?>
-					</ul>
-				</div><!-- #fourth .widget-area -->				
-				
-			</div><!-- #footer-widget-area -->
-		
-			<div id="site-info">
+				<div id="site-info">
 				<a href="<?php echo htmlspecialchars($this->data['nav_urls']['mainpage']['href'])?>" rel="home"><?php echo $this->text('sitename') ?></a>
 			</div><!-- #site-info -->
 			<div id="site-generator">Powered by
