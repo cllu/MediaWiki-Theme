@@ -26,9 +26,7 @@ class SkinTwentyTen extends SkinTemplate {
 		parent::setupSkinUserCss( $out );
 
 		$out->addStyle( 'twentyten/twentyten.css', 'screen' );
-		$out->addStyle( 'twentyten/rtl.css',       'screen', '', 'rtl' );
 		$out->addStyle( 'twentyten/main.css',      'screen' );
-
 	}
 
 	/**
