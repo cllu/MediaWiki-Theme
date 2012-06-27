@@ -113,7 +113,7 @@ input,
 textarea,
 .page-title span,
 .pingback a.url {
-	font-family: Georgia, "Bitstream Charter", serif;
+	font-family: Arial, Helvetica, sans-serif;
 }
 h3#comments-title,
 h3#reply-title,
@@ -458,7 +458,7 @@ div.menu li {
 #content input,
 #content textarea {
 	color: #333;
-	font-size: 16px;
+	font-size: 14px;
 	line-height: 24px;
 }
 #content p,
@@ -501,9 +501,9 @@ div.menu li {
 }
 #content table {
 	border: 1px solid #e7e7e7;
-	margin: 0 -1px 24px 0;
+	margin: 0;
+    padding: 5px;
 	text-align: left;
-	width: 100%;
 }
 #content tr th,
 #content thead th {
@@ -515,7 +515,7 @@ div.menu li {
 }
 #content tr td {
 	border-top: 1px solid #e7e7e7;
-	padding: 6px 24px;
+	padding: 5px;
 }
 #content tr.odd td {
 	background: #f2f7fc;

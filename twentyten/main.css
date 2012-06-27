@@ -1,6 +1,6 @@
 .printfooter { display:none }
-a { color:#007296 }
-.editsection { font-size:14px; color:#777 }
+a { color:#007296; text-decoration:none; }
+.editsection { font-weight:normal; font-size:14px; color:#777 }
 .editsection a { color:#777; text-decoration:none }
 .editsection a:hover { color:#007296 }
 
@@ -19,3 +19,7 @@ div.thumb div.magnify a,
 div.thumb div.magnify img { display:block; border:none !important; background:none !important }
 div.thumb img.thumbborder { border:1px solid #dddddd }
 .hiddenStructure { display: none }
+
+#toc { border:#AAA; background-color:#F9F9F9; padding:5px; margin: 0; font-size: 12px; }
+#toc h2 { font-size:12px; font-weight:bold; display:inline; border:none; padding:0; }
+#toc ul { list-style-type:none; list-style-image:none; margin-left:0; padding:0;}
