@@ -99,43 +99,11 @@ class TwentyTenTemplate extends QuickTemplate {
 						<?php echo $this->text('sitename') ?>
 					</a>
 				</h1>
-				<div id="site-description"><?php $this->msg('tagline') ?></div>
 			</div><!-- #branding -->
-
-			<div id="access" role="navigation">
-				<div class="menu">
-					<ul>
-						<?php foreach ($this->data['sidebar']['MENUBAR'] as $menuitem): ?>
-						<li class="page_item">
-							<a href="<?php echo $menuitem['href'] ?>"><?php echo $menuitem['text'] ?></a>
-						</li>
-						<?php endforeach ?>
-					</ul>
-				</div>
-			</div><!-- #access -->
 		</div><!-- #masthead -->
 	</div><!-- #header -->
-
-	<div id="main" <?php $this->html("specialpageattributes") ?>>
-		<div id="container">
-			<div id="content" role="main">			
-				<div>
-					<h2 class="entry-title"><?php $this->html('title') ?></h2>
-					<div class="entry-meta">
-						<?php $this->html('subtitle') ?>
-					</div><!-- .entry-meta -->
-					
-					<div class="entry-content">
-						<?php $this->html('bodytext') ?>
-						<?php if($this->data['catlinks']) { $this->html('catlinks'); } ?>
-						<?php if($this->data['dataAfterContent']) { $this->html ('dataAfterContent'); } ?>
-					</div>
-				</div>
-			
-			</div><!-- #content -->
-		</div><!-- #container -->
-		
-		<div id="primary" class="widget-area" role="complementary">
+      
+      <div id="primary" class="widget-area" role="complementary">
 			<ul class="xoxo">
 						
 			<?php $sidebar = $this->data['sidebar'];
@@ -156,6 +124,24 @@ class TwentyTenTemplate extends QuickTemplate {
 			</ul>
 		</div><!-- #primary .widget-area -->
 
+	<div id="main" <?php $this->html("specialpageattributes") ?>>
+		<div id="container">
+			<div id="content" role="main">			
+				<div>
+					<h2 class="entry-title"><?php $this->html('title') ?></h2>
+					<div class="entry-meta">
+						<?php $this->html('subtitle') ?>
+					</div><!-- .entry-meta -->
+					
+					<div class="entry-content">
+						<?php $this->html('bodytext') ?>
+						<?php if($this->data['catlinks']) { $this->html('catlinks'); } ?>
+						<?php if($this->data['dataAfterContent']) { $this->html ('dataAfterContent'); } ?>
+					</div>
+				</div>
+			
+			</div><!-- #content -->
+		</div><!-- #container -->
 	</div><!-- #main -->
 
 	<div id="footer" role="contentinfo" <?php $this->html('userlangattributes') ?>>

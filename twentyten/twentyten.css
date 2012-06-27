@@ -68,19 +68,32 @@ DESCRIPTION: Two-column fixed layout with one sidebar right of content
 	margin: 0 -240px 0 0;
 	width: 100%;
 }
+
+#header {
+    position: fixed;
+    top: 100px;
+    width: 220px;
+    text-align: right;
+}
 #content {
+    position: absolute;
+    top: 100px;
+    left:500px;
 	margin: 0 280px 0 20px;
 }
-#primary,
-#secondary {
-	float: right;
+#primary {
+    position: fixed;
+    top: 200px;
+    clear: both;
 	overflow: hidden;
 	width: 220px;
+    text-align: right;
 }
 #secondary {
-	clear: right;
+	clear: both;
 }
 #footer {
+    display: none;
 	clear: both;
 	width: 100%;
 }
@@ -165,7 +178,6 @@ div.menu,
 	width: 940px;
 }
 #wrapper {
-	background: #fff;
 	margin-top: 20px;
 	padding: 0 20px;
 }
@@ -303,9 +315,6 @@ input[type="text"],
 textarea {
 	background: #f9f9f9;
 	border: 1px solid #ccc;
-	box-shadow: inset 1px 1px 1px rgba(0,0,0,0.1);
-	-moz-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.1);
-	-webkit-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.1);
 	padding: 2px;
 }
 a:link {
@@ -337,7 +346,7 @@ a:hover {
 	font-size: 30px;
 	line-height: 36px;
 	margin: 0 0 18px 0;
-	width: 700px;
+	width: 220px;
 }
 #site-title a {
 	color: #000;
@@ -1341,4 +1350,14 @@ h2 .entry-title {
 .catlinks {
     border: 1px solid #999;
     background-color: #F9F9F9;
+}
+
+body {
+    background-color: white;
+}
+#searchGoButton {
+    display: none;
+}
+#primary ul {
+    list-style-type: none;
 }
