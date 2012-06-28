@@ -91,7 +91,7 @@ class TwentyTenTemplate extends QuickTemplate {
 
 		$this->html( 'headelement' );
 ?><div id="wrapper" class="hfeed">
-	<div id="header">
+	<div id="header" class="noprint">
 		<div id="masthead">
 			<div id="branding" role="banner">
 				<h1 id="site-title">
@@ -103,7 +103,7 @@ class TwentyTenTemplate extends QuickTemplate {
 		</div><!-- #masthead -->
 	</div><!-- #header -->
       
-      <div id="primary" class="widget-area" role="complementary">
+      <div id="primary" class="widget-area noprint" role="complementary">
 			<ul class="xoxo">
 						
 			<?php $sidebar = $this->data['sidebar'];
