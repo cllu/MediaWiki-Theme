@@ -47,24 +47,20 @@ a img {
 
 /* =Layout
 -------------------------------------------------------------- */
+#wrapper {
+	margin: 0 auto;
+	width: 940px;
+	margin-top: 20px;
+	padding: 0 20px;
+}
 
 #header {
     position: fixed;
-    top: 100px;
+    top: 120px;
     width: 220px;
     text-align: right;
 }
-#main {
-    float: left:
-}
-#content {
-    position: absolute;
-    top: 100px;
-    left:500px;
-    width: 500px;
-	margin: 0 280px 0 20px;
-}
-#navigation {
+#sidebar {
     position: fixed;
     top: 200px;
     clear: both;
@@ -72,7 +68,14 @@ a img {
 	width: 220px;
     text-align: right;
 }
-
+#main {
+    position: absolute;
+    top: 20px;
+    left:500px;
+    width: 600px;
+	margin: 0 280px 0 20px;
+	padding: 40px 0 50px 0;
+}
 #footer {
     display: none;
 	clear: both;
@@ -87,30 +90,12 @@ textarea,
 .page-title span {
 	font-family: Arial, Helvetica, sans-serif;
 }
-h3#reply-title,
-#site-info,
 #site-title,
-.entry-content label,
-.entry-content tr th,
-.entry-content thead th,
-.entry-title,
-.navigation,
-.page-title,
-.widget-title,
-input[type=submit] {
+.widget-title {
 	font-family: "Helvetica Neue", Arial, Helvetica, "Nimbus Sans L", sans-serif;
 }
 pre, code {
 	font-family: Courier, monospace;
-}
-
-/* =Structure
--------------------------------------------------------------- */
-#wrapper {
-	margin: 0 auto;
-	width: 940px;
-	margin-top: 20px;
-	padding: 0 20px;
 }
 
 /* =Global Elements
@@ -132,11 +117,54 @@ hr {
 	height: 1px;
 	margin-bottom: 18px;
 }
-
-/* Text elements */
-p {
-	margin-bottom: 18px;
+a { 
+    color:#007296; 
+    text-decoration:none; 
 }
+
+/* =Header
+-------------------------------------------------------------- */
+#site-title {
+	font-size: 30px;
+	line-height: 36px;
+	margin: 0 0 18px 0;
+	width: 220px;
+}
+#site-title a {
+	color: #000;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+/* =Sidebar
+--------------------------------------------------------------*/ 
+#searchGoButton {
+    display: none;
+}
+#sidebar ul {
+    list-style-type: none;
+}
+
+.widget-area ul {
+	list-style: none;
+	margin-left: 0;
+}
+.widget-area ul ul {
+	margin-left: 1.3em;
+}
+.widget-container {
+	margin: 0 0 18px 0;
+}
+.widget-title {
+	color: #222;
+	font-weight: bold;
+}
+
+
+/* =Main/Content
+-------------------------------------------------------------- */
+
+/* list */
 ul {
 	list-style: square;
 	margin: 0 0 18px 1.5em;
@@ -169,6 +197,8 @@ dt {
 dd {
 	margin-bottom: 18px;
 }
+
+/* text */
 strong {
 	font-weight: bold;
 }
@@ -193,13 +223,7 @@ blockquote em,
 blockquote i {
 	font-style: normal;
 }
-pre {
-	background: #f7f7f7;
-	color: #222;
-	line-height: 18px;
-	margin-bottom: 18px;
-	padding: 1.5em;
-}
+
 abbr,
 acronym {
 	border-bottom: 1px dotted #666;
@@ -224,6 +248,8 @@ textarea {
 	border: 1px solid #ccc;
 	padding: 2px;
 }
+
+/* link */
 a:link {
 	color: #0066cc;
 }
@@ -235,35 +261,6 @@ a:hover {
 	color: #ff4b33;
 }
 
-/* =Header
--------------------------------------------------------------- */
-#header {
-	padding: 30px 0 0 0;
-}
-#site-title {
-	float: left;
-	font-size: 30px;
-	line-height: 36px;
-	margin: 0 0 18px 0;
-	width: 220px;
-}
-#site-title a {
-	color: #000;
-	font-weight: bold;
-	text-decoration: none;
-}
-
-
-/* =Content
--------------------------------------------------------------- */
-#main {
-	clear: both;
-	overflow: hidden;
-	padding: 40px 0 0 0;
-}
-#content {
-	margin-bottom: 36px;
-}
 #content,
 #content input,
 #content textarea {
@@ -275,9 +272,8 @@ a:hover {
 #content ul,
 #content ol,
 #content dd,
-#content pre,
 #content hr {
-	margin-bottom: 24px;
+	margin-bottom: 0;
 }
 #content ul ul,
 #content ol ol,
@@ -285,19 +281,44 @@ a:hover {
 #content ol ul {
 	margin-bottom: 0;
 }
-#content pre,
 #content tt,
 #content var {
 	font-size: 15px;
 	line-height: 21px;
 }
+
+/* code */
 #content code {
 	font-size: 13px;
 }
+#content pre {
+	background: #f7f7f7;
+	color: #222;
+	line-height: 18px;
+	margin-bottom: 10px;
+	padding: 5px;
+    border: 1px dashed #2F6FAB;
+    word-wrap: break-word;
+}
+/* if we use geshi */
+#content .mw-geshi pre{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+div.mw-geshi {
+    padding: 1em; 
+    margin: 1em 0; 
+    border: 1px dashed #2f6fab;
+    background-color: #f9f9f9;
+}
+
 #content dt,
 #content th {
 	color: #000;
 }
+
+/* Heading */
 #content h1,
 #content h2,
 #content h3,
@@ -308,6 +329,50 @@ a:hover {
 	line-height: 1.5em;
 	margin: 0 0 20px 0;
 }
+h2 .entry-title {
+    font-size: 24px;
+    border-bottom: 1px solid #AAA;
+}
+#content .entry-title {
+	color: #000;
+	font-size: 21px;
+	font-weight: bold;
+	line-height: 1.3em;
+	margin-bottom: 0;
+}
+.entry-title a:link,
+.entry-title a:visited {
+	color: #000;
+	text-decoration: none;
+}
+.entry-title a:active,
+.entry-title a:hover {
+	color: #ff4b33;
+}
+#content h2 {
+    font-size: 22px;
+    border-bottom: 1px solid #AAA;
+}
+#content h3 {
+    font-size: 18px;
+    font-weight:bold;
+}
+
+/* section edit link */
+.editsection { 
+    font-weight:normal; 
+    font-size:14px; 
+    color:#777 
+}
+.editsection a { 
+    color:#777; 
+    text-decoration:none 
+}
+.editsection a:hover { 
+    color:#007296 
+}
+
+/* Table */
 #content table {
 	border: 1px solid #e7e7e7;
 	margin: 0;
@@ -329,29 +394,10 @@ a:hover {
 #content tr.odd td {
 	background: #f2f7fc;
 }
-#content .entry-title {
-	color: #000;
-	font-size: 21px;
-	font-weight: bold;
-	line-height: 1.3em;
-	margin-bottom: 0;
-}
-.entry-title a:link,
-.entry-title a:visited {
-	color: #000;
-	text-decoration: none;
-}
-.entry-title a:active,
-.entry-title a:hover {
-	color: #ff4b33;
-}
-.entry-content,
-.entry-summary {
+
+.entry-content {
 	clear: both;
 	padding: 12px 0 0 0;
-}
-#content .entry-summary p:last-child {
-	margin-bottom: 12px;
 }
 .entry-content fieldset {
 	border: 1px solid #e7e7e7;
@@ -378,10 +424,6 @@ a:hover {
 .entry-content select {
 	margin: 0 0 24px 0;
 }
-.entry-content sup,
-.entry-content sub {
-	font-size: 10px;
-}
 .entry-content blockquote.left {
 	float: left;
 	margin-left: 0;
@@ -396,9 +438,54 @@ a:hover {
 	text-align: left;
 	width: 33%;
 }
+/* page list in category page.*/
+.mw-content-ltr {
+    font-size: 14px;
+}
+.catlinks {
+    border: 1px solid #999;
+    background-color: #F9F9F9;
+}
 
-/* =Images
--------------------------------------------------------------- */
+.printfooter { display:none }
+
+/* Thumbnails from Vector CSS main-ltr.css?270 */
+div.thumb { margin-bottom:0.5em; border-style:solid; border-color:white; width:auto; background-color:transparent }
+div.thumb.tright { clear:right; float:right; border-width:0.5em 0 0.8em 1.4em }
+div.thumb.tleft { float:left; clear:left; margin-right:0.5em; border-width:0.5em 1.4em 0.8em 0 }
+div.thumb div.thumbinner { border:1px solid #ccc; padding:3px !important; background-color:#f9f9f9; font-size:94%; text-align:center; overflow:hidden }
+div.thumb img.thumbimage { border:1px solid #ccc; max-width:none !important }
+div.thumb div.thumbcaption { border:none; text-align:left; line-height:1.4em; padding:3px !important; font-size:94% }
+div.thumb div.magnify { float:right; border:none !important; background:none !important }
+div.thumb div.magnify a,
+div.thumb div.magnify img { display:block; border:none !important; background:none !important }
+div.thumb img.thumbborder { border:1px solid #dddddd }
+.hiddenStructure { display: none }
+
+/* table of content block */
+#toc { 
+    border:#AAA; 
+    background-color:#F9F9F9; 
+    padding:5px; 
+    margin: 0; 
+    font-size: 12px; 
+}
+#toc h2 { 
+    font-size:12px; 
+    font-weight:bold; 
+    display:inline; 
+    border:none; 
+    padding:0; 
+}
+#toc ul { 
+    list-style-type:none; 
+    list-style-image:none; 
+    margin-left:0; 
+    padding:0;
+}
+
+
+/* Images */
 #content img {
 	margin: 0;
 	height: auto;
@@ -447,24 +534,6 @@ a:hover {
 	margin: 5px;
 }
 
-/* =Widget Areas
---------------------------------------------------------------*/ 
-
-.widget-area ul {
-	list-style: none;
-	margin-left: 0;
-}
-.widget-area ul ul {
-	margin-left: 1.3em;
-}
-.widget-container {
-	margin: 0 0 18px 0;
-}
-.widget-title {
-	color: #222;
-	font-weight: bold;
-}
-
 
 /* =Footer
 -------------------------------------------------------------- */
@@ -490,35 +559,15 @@ a:hover {
 	position: relative;
 }
 #site-generator a {
+    display:inline; 
+    padding: 0;
+    text-decoration:underline; 
 	color: #666;
-	display: inline-block;
 	line-height: 16px;
-	padding-left: 20px;
-	text-decoration: none;
 }
 #site-generator a:hover {
 	text-decoration: underline;
 }
-
-/* =Mobile Safari ( iPad, iPhone and iPod Touch )
--------------------------------------------------------------- */
-
-pre {
-	-webkit-text-size-adjust: 140%;
-}
-code {
-	-webkit-text-size-adjust: 160%;
-}
-.entry-meta,
-.entry-utility,
-.navigation,
-.widget-area {
-	-webkit-text-size-adjust: 120%;
-}
-#site-description {
-	-webkit-text-size-adjust: none;
-}
-
 
 /* =Print Style
 -------------------------------------------------------------- */
@@ -584,55 +633,3 @@ code {
 	}
 }
 
-
-h2 .entry-title {
-    font-size: 24px;
-    border-bottom: 1px solid #AAA;
-}
-#content h2 {
-    font-size: 22px;
-    border-bottom: 1px solid #AAA;
-}
-#content h3 {
-    font-size: 18px;
-    font-weight:bold;
-}
-/* page list in category page.*/
-.mw-content-ltr {
-    font-size: 14px;
-}
-.catlinks {
-    border: 1px solid #999;
-    background-color: #F9F9F9;
-}
-
-#searchGoButton {
-    display: none;
-}
-#navigation ul {
-    list-style-type: none;
-}
-.printfooter { display:none }
-a { color:#007296; text-decoration:none; }
-.editsection { font-weight:normal; font-size:14px; color:#777 }
-.editsection a { color:#777; text-decoration:none }
-.editsection a:hover { color:#007296 }
-
-#site-generator a { display:inline; padding:0; text-decoration:underline }
-
-/* Thumbnails from Vector CSS main-ltr.css?270 */
-div.thumb { margin-bottom:0.5em; border-style:solid; border-color:white; width:auto; background-color:transparent }
-div.thumb.tright { clear:right; float:right; border-width:0.5em 0 0.8em 1.4em }
-div.thumb.tleft { float:left; clear:left; margin-right:0.5em; border-width:0.5em 1.4em 0.8em 0 }
-div.thumb div.thumbinner { border:1px solid #ccc; padding:3px !important; background-color:#f9f9f9; font-size:94%; text-align:center; overflow:hidden }
-div.thumb img.thumbimage { border:1px solid #ccc; max-width:none !important }
-div.thumb div.thumbcaption { border:none; text-align:left; line-height:1.4em; padding:3px !important; font-size:94% }
-div.thumb div.magnify { float:right; border:none !important; background:none !important }
-div.thumb div.magnify a,
-div.thumb div.magnify img { display:block; border:none !important; background:none !important }
-div.thumb img.thumbborder { border:1px solid #dddddd }
-.hiddenStructure { display: none }
-
-#toc { border:#AAA; background-color:#F9F9F9; padding:5px; margin: 0; font-size: 12px; }
-#toc h2 { font-size:12px; font-weight:bold; display:inline; border:none; padding:0; }
-#toc ul { list-style-type:none; list-style-image:none; margin-left:0; padding:0;}

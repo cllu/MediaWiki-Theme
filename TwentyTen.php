@@ -91,18 +91,14 @@ class TwentyTenTemplate extends QuickTemplate {
 		$this->html( 'headelement' );
 ?><div id="wrapper" class="hfeed">
 	<div id="header" class="noprint">
-		<div id="masthead">
-			<div id="branding" role="banner">
-				<h1 id="site-title">
+				<div id="site-title">
 					<a href="<?php echo htmlspecialchars($this->data['nav_urls']['mainpage']['href'])?>" rel="home">
 						<?php echo $this->text('sitename') ?>
 					</a>
-				</h1>
-			</div><!-- #branding -->
-		</div><!-- #masthead -->
+				</div>
 	</div><!-- #header -->
       
-      <div id="navigation" class="widget-area noprint" role="complementary">
+      <div id="sidebar" class="widget-area noprint" role="complementary">
 			<ul class="xoxo">
 						
 			<?php $sidebar = $this->data['sidebar'];
