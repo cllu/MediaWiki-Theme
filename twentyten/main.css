@@ -106,14 +106,9 @@ pre, code {
 
 /* =Structure
 -------------------------------------------------------------- */
-div.menu,
-#colophon,
-#main,
 #wrapper {
 	margin: 0 auto;
 	width: 940px;
-}
-#wrapper {
 	margin-top: 20px;
 	padding: 0 20px;
 }
@@ -291,7 +286,6 @@ a:hover {
 	margin-bottom: 0;
 }
 #content pre,
-#content kbd,
 #content tt,
 #content var {
 	font-size: 15px;
@@ -454,21 +448,14 @@ a:hover {
 }
 
 /* =Widget Areas
--------------------------------------------------------------- */
+--------------------------------------------------------------*/ 
 
 .widget-area ul {
 	list-style: none;
 	margin-left: 0;
 }
 .widget-area ul ul {
-	list-style: square;
 	margin-left: 1.3em;
-}
-.widget_search #s {/* This keeps the search inputs in line */
-	width: 60%;
-}
-.widget_search label {
-	display: none;
 }
 .widget-container {
 	margin: 0 0 18px 0;
@@ -477,17 +464,7 @@ a:hover {
 	color: #222;
 	font-weight: bold;
 }
-.widget-area a:link,
-.widget-area a:visited {
-	text-decoration: none;
-}
-.widget-area a:active,
-.widget-area a:hover {
-	text-decoration: underline;
-}
-.widget-area .entry-meta {
-	font-size: 11px;
-}
+
 
 /* =Footer
 -------------------------------------------------------------- */
