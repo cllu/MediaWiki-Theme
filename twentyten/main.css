@@ -48,30 +48,23 @@ a img {
 /* =Layout
 -------------------------------------------------------------- */
 
-/*
-LAYOUT: Two columns
-DESCRIPTION: Two-column fixed layout with one sidebar right of content
-*/
-
-#container {
-	float: left;
-	margin: 0 -240px 0 0;
-	width: 100%;
-}
-
 #header {
     position: fixed;
     top: 100px;
     width: 220px;
     text-align: right;
 }
+#main {
+    float: left:
+}
 #content {
     position: absolute;
     top: 100px;
     left:500px;
+    width: 500px;
 	margin: 0 280px 0 20px;
 }
-#primary {
+#navigation {
     position: fixed;
     top: 200px;
     clear: both;
@@ -254,13 +247,6 @@ a:hover {
 	color: #ff4b33;
 }
 
-/* Text meant only for screen readers */
-.screen-reader-text {
-	position: absolute;
-	left: -9000px;
-}
-
-
 /* =Header
 -------------------------------------------------------------- */
 
@@ -279,13 +265,7 @@ a:hover {
 	font-weight: bold;
 	text-decoration: none;
 }
-#site-description {
-	clear: right;
-	float: right;
-	font-style: italic;
-	margin: 14px 0 18px 0;
-	width: 220px;
-}
+
 
 /* =Menu
 -------------------------------------------------------------- */
@@ -828,7 +808,6 @@ code {
 	.widget-area {
 		display: none !important;
 	}
-	#container,
 	#header,
 	#footer {
 		margin: 0;
@@ -863,7 +842,6 @@ code {
 }
 
 
-/* added by chunliang */
 h2 .entry-title {
     font-size: 24px;
     border-bottom: 1px solid #AAA;
@@ -891,7 +869,7 @@ body {
 #searchGoButton {
     display: none;
 }
-#primary ul {
+#navigation ul {
     list-style-type: none;
 }
 .printfooter { display:none }
@@ -900,7 +878,6 @@ a { color:#007296; text-decoration:none; }
 .editsection a { color:#777; text-decoration:none }
 .editsection a:hover { color:#007296 }
 
-#site-title img { display:inline; height:30px; border:0 }
 #site-generator a { display:inline; padding:0; text-decoration:underline }
 
 /* Thumbnails from Vector CSS main-ltr.css?270 */

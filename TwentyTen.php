@@ -102,7 +102,7 @@ class TwentyTenTemplate extends QuickTemplate {
 		</div><!-- #masthead -->
 	</div><!-- #header -->
       
-      <div id="primary" class="widget-area noprint" role="complementary">
+      <div id="navigation" class="widget-area noprint" role="complementary">
 			<ul class="xoxo">
 						
 			<?php $sidebar = $this->data['sidebar'];
@@ -124,7 +124,6 @@ class TwentyTenTemplate extends QuickTemplate {
 		</div><!-- #primary .widget-area -->
 
 	<div id="main" <?php $this->html("specialpageattributes") ?>>
-		<div id="container">
 			<div id="content" role="main">			
 				<div>
 					<h2 class="entry-title"><?php $this->html('title') ?></h2>
@@ -140,7 +139,6 @@ class TwentyTenTemplate extends QuickTemplate {
 				</div>
 			
 			</div><!-- #content -->
-		</div><!-- #container -->
 	</div><!-- #main -->
 
 	<div id="footer" role="contentinfo" <?php $this->html('userlangattributes') ?>>
