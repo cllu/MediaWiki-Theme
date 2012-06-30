@@ -140,6 +140,30 @@ class TwentyTenTemplate extends QuickTemplate {
 				and the <a href="http://wordpress.org/extend/themes/twentyten" rel="generator">TwentyTen theme</a>.
 			</div>
 		</div><!-- #colophon -->
+        <ul id="content-actions">
+            <?php
+                foreach($this->data['content_actions'] as $key => $tab) {
+                    echo '
+                 <li id="' . Sanitizer::escapeId( "ca-$key" ) . '"';
+                    if( $tab['class'] ) {
+                        echo ' class="'.htmlspecialchars($tab['class']).'"';
+                    }
+                    echo '><a href="'.htmlspecialchars($tab['href']).'"';
+                    # We don't want to give the watch tab an accesskey if the
+                    # page is being edited, because that conflicts with the
+                    # accesskey on the watch checkbox.  We also don't want to
+                    # give the edit tab an accesskey, because that's fairly su-
+                    # perfluous and conflicts with an accesskey (Ctrl-E) often
+                    # used for editing in Safari.
+                    if( in_array( $action, array( 'edit', 'submit' ) )
+                    && in_array( $key, array( 'edit', 'watch', 'unwatch' ))) {
+                        echo Xml::expandAttributes( $skin->tooltip( "ca-$key" ) );
+                    } else {
+                        echo Xml::expandAttributes( $skin->tooltipAndAccesskeyAttribs( "ca-$key" ) );
+                    }
+                    echo '>'.htmlspecialchars($tab['text']).'</a></li>';
+                } ?>
+        </ul>
 	</div><!-- #footer -->
 
 </div><!-- #wrapper -->
