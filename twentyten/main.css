@@ -325,9 +325,14 @@ div.mw-geshi {
 #content h4,
 #content h5,
 #content h6 {
-	color: #000;
-	line-height: 1.5em;
-	margin: 0 0 20px 0;
+	color: black;
+	margin: 0;
+    padding-top: 0.5em;
+    padding-bottom: 0.17em;
+}
+#content h1,
+#content h2 {
+    margin-bottom: 0.6em;
 }
 h2 .entry-title {
     font-size: 24px;
@@ -338,7 +343,6 @@ h2 .entry-title {
 	font-size: 21px;
 	font-weight: bold;
 	line-height: 1.3em;
-	margin-bottom: 0;
 }
 .entry-title a:link,
 .entry-title a:visited {
@@ -443,8 +447,12 @@ h2 .entry-title {
     font-size: 14px;
 }
 .catlinks {
-    border: 1px solid #999;
+    border: 1px solid #AAA;
     background-color: #F9F9F9;
+    padding: 5px;
+    margin-top: 1em;
+    clear: both;
+    line-height: 1.25em;
 }
 
 .printfooter { display:none }

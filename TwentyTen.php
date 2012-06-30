@@ -1,15 +1,11 @@
 <?php
 /**
- * Wordpress TwentyTen theme adapted for MediaWiki.
- *
- * @link http://github.com/samwilson/mediawiki_twentyten
  * @ingroup Skins
  */
 if( !defined( 'MEDIAWIKI' ) ) die( -1 );
 
 /**
  * Inherit main code from SkinTemplate, set the CSS and template filter.
- * @todo document
  * @ingroup Skins
  */
 class SkinTwentyTen extends SkinTemplate {
@@ -151,8 +147,6 @@ class TwentyTenTemplate extends QuickTemplate {
 <?php $this->html('bottomscripts'); /* JS call to runBodyOnloadHook */ ?>
 </body>
 </html>
-
-
 
 	<?php
 	wfRestoreWarnings();
