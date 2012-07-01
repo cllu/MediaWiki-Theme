@@ -259,13 +259,16 @@ textarea {
 	padding: 2px;
 }
 
+#wpTextbox1 {
+    width: 600px;
+}
 
 #content,
 #content input,
 #content textarea {
 	color: #333;
 	font-size: 14px;
-	line-height: 24px;
+	line-height: 1.5em;
 }
 #content p,
 #content ul,
