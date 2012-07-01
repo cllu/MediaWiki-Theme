@@ -137,7 +137,6 @@ class TwentyTenTemplate extends QuickTemplate {
 		<div id="colophon">
 		    <div id="site-generator">Powered by
 				<a href="http://mediawiki.org/" rel="generator">MediaWiki</a>
-				and the <a href="http://wordpress.org/extend/themes/twentyten" rel="generator">TwentyTen theme</a>.
 			</div>
 		</div><!-- #colophon -->
         <ul id="content-actions">
@@ -157,9 +156,9 @@ class TwentyTenTemplate extends QuickTemplate {
                     # used for editing in Safari.
                     if( in_array( $action, array( 'edit', 'submit' ) )
                     && in_array( $key, array( 'edit', 'watch', 'unwatch' ))) {
-                        echo Xml::expandAttributes( $skin->tooltip( "ca-$key" ) );
+                        echo Linker::tooltip( "ca-$key" );
                     } else {
-                        echo Xml::expandAttributes( $skin->tooltipAndAccesskeyAttribs( "ca-$key" ) );
+                        echo Xml::expandAttributes( Linker::tooltipAndAccesskeyAttribs( "ca-$key" ) );
                     }
                     echo '>'.htmlspecialchars($tab['text']).'</a></li>';
                 } ?>
