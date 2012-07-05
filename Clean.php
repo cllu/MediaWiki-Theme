@@ -8,10 +8,10 @@ if( !defined( 'MEDIAWIKI' ) ) die( -1 );
  * Inherit main code from SkinTemplate, set the CSS and template filter.
  * @ingroup Skins
  */
-class SkinTwentyTen extends SkinTemplate {
+class SkinClean extends SkinTemplate {
 
-	var $skinname = 'twentyten', $stylename = 'twentyten',
-		$template = 'TwentyTenTemplate', $useHeadElement = true;
+	var $skinname = 'clean', $stylename = 'clean',
+		$template = 'CleanTemplate', $useHeadElement = true;
 
 	/** @var string The cache key under which to store the current page's TOC. */
 	var $savedTocCacheKey;
@@ -21,7 +21,7 @@ class SkinTwentyTen extends SkinTemplate {
 
 		parent::setupSkinUserCss( $out );
 
-		$out->addStyle( 'twentyten/main.css',      'screen' );
+		$out->addStyle( 'clean/main.css',      'screen' );
 	}
 
 	/**
@@ -35,18 +35,18 @@ class SkinTwentyTen extends SkinTemplate {
 	function setTitle( $t ) {
 		parent::setTitle($t);
 		$article_id = $this->mTitle->getArticleID();
-		$this->savedTocCacheKey = wfMemcKey('twentyten', 'saved-toc', $article_id);
+		$this->savedTocCacheKey = wfMemcKey('clean', 'saved-toc', $article_id);
 	}
 
 	/**
 	 * Completes the HTML for this page's TOC (note the closing UL tag) in a form
 	 * suitable for use in the sidebar, and saves it to the cache for later use in
-	 * {@link TwentyTenTemplate::pageTocBox()}.
+	 * {@link CleanTemplate::pageTocBox()}.
 	 *
 	 * @param string $toc HTML of the Table Of Contents for this page.
 	 *
 	 * @see Linker::tocList()
-	 * @see TwentyTenTemplate::pageTocBox()
+	 * @see CleanTemplate::pageTocBox()
 	 * @return string An empty string; the TOC is pulled from cache, later.
 	 */
 	function tocList($toc) {
@@ -63,10 +63,10 @@ class SkinTwentyTen extends SkinTemplate {
  * @todo document
  * @ingroup Skins
  */
-class TwentyTenTemplate extends QuickTemplate {
+class CleanTemplate extends QuickTemplate {
 	var $skin;
 	/**
-	 * Template filter callback for TwentyTen skin.
+	 * Template filter callback for Clean skin.
 	 * Takes an associative array of data set from a SkinTemplate-based
 	 * class, and a wrapper for MediaWiki's localization database, and
 	 * outputs a formatted page.
@@ -74,7 +74,7 @@ class TwentyTenTemplate extends QuickTemplate {
 	 * @access private
 	 */
 	function execute() {
-		global $wgRequest, $wgSitename, $wgTwentytenHeader, $wgStylePath;
+		global $wgRequest, $wgSitename, $wgCleanHeader, $wgStylePath;
 
 		$this->skin = $skin = $this->data['skin'];
 		$action = $wgRequest->getText( 'action' );
@@ -256,7 +256,7 @@ class TwentyTenTemplate extends QuickTemplate {
 				<li id="t-ispermalink"<?php echo Linker::tooltip('t-ispermalink') ?>><?php $this->msg('permalink') ?></li><?php
 		}
 
-		wfRunHooks( 'TwentyTenTemplateToolboxEnd', array( &$this ) );
+		wfRunHooks( 'CleanTemplateToolboxEnd', array( &$this ) );
 		wfRunHooks( 'SkinTemplateToolboxEnd', array( &$this ) );
 	}
 
