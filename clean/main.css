@@ -69,9 +69,8 @@ a img {
     text-align: right;
 }
 #main {
-    position: absolute;
-    top: 20px;
-    left:500px;
+    position: relative;
+    left: 250px;
     width: 600px;
 	margin: 0 280px 0 20px;
 	padding: 40px 0 50px 0;
@@ -275,7 +274,7 @@ textarea {
 #content ol,
 #content dd,
 #content hr {
-	margin-bottom: 0;
+	margin-bottom: 10px;
 }
 #content ul ul,
 #content ol ol,
